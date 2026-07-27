@@ -111,7 +111,24 @@ button { font-family: inherit; cursor: pointer; }
 .stamp-mark { width: 82%; height: auto; color: var(--ink); transform: rotate(-8deg); opacity: .9; }
 
 /* ===== フッター ===== */
-.book-foot { text-align: center; margin-top: 34px; }
+.book-foot { text-align: center; margin-top: 40px; }
+
+/* YouTube への案内カード */
+.yt-promo {
+  display: flex; align-items: center; gap: 16px; text-align: left;
+  max-width: 420px; margin: 0 auto 24px; padding: 16px 22px;
+  background: var(--white); border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(111, 159, 187, 0.10);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+}
+.yt-promo:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--blue-soft); }
+.yt-promo-ico {
+  flex: none; width: 46px; height: 46px; display: grid; place-items: center;
+  font-size: 20px; border-radius: 50%; background: #f8eef0; color: #c06b74;
+}
+.yt-promo-txt { display: flex; flex-direction: column; gap: 3px; font-size: 13px; color: var(--text-soft); }
+.yt-promo-txt b { font-family: "Zen Old Mincho", serif; font-weight: 500; font-size: 15px; color: var(--text); letter-spacing: .04em; }
+
 .link-reset { background: none; border: 0; color: var(--text-mute); font-size: 12.5px; text-decoration: underline; }
 .link-reset:hover { color: var(--text-soft); }
 
