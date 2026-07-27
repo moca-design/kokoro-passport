@@ -15,7 +15,7 @@ const COUNTRIES = [
     sub: "Lagom ― 心がほどける北欧の生き方",
     bg: "assets/se-bg.png",        // メッセージ画面の背景（ストックホルムの朝焼け）
     status: "active",              // active / soon / locked
-    password: "lagom",             // ← あとで自由に変更できます
+    password: "lagom-se01",        // ← 記事の有料エリアに書く合言葉（あとで変更可）
     line: "スウェーデンで出会った“ちょうどいい”を、あなたの毎日に。",
     list: [
       "時には、人に頼ってみる",
