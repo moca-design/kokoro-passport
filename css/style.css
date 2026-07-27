@@ -112,6 +112,12 @@ button { font-family: inherit; cursor: pointer; }
 
 /* ===== フッター ===== */
 .book-foot { text-align: center; margin-top: 40px; }
+.save-hint {
+  max-width: 420px; margin: 0 auto 22px; padding: 14px 20px;
+  background: var(--mint); border: 1px solid var(--blue-soft); border-radius: 14px;
+  color: var(--text-soft); font-size: 12.5px; line-height: 1.85;
+}
+.save-hint b { color: var(--blue-ink); font-weight: 700; }
 
 /* YouTube への案内カード */
 .yt-promo {
