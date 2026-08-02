@@ -66,7 +66,17 @@ const modal = $("#modal");
 const modalBody = $("#modal-body");
 
 // ===== 画面の切り替え =====
-function showCover() { screenCover.hidden = false; screenBook.hidden = true; }
+function showCover() {
+  screenCover.hidden = false;
+  screenBook.hidden = true;
+  // 記録済みの名前があれば入れておく（ワンタップで戻れるように）
+  const saved = loadName();
+  if (saved) {
+    const input = $("#name-input");
+    if (input) input.value = saved;
+  }
+  window.scrollTo(0, 0);
+}
 function showBook() {
   screenCover.hidden = true; screenBook.hidden = false;
   $("#owner-name").textContent = loadName();
@@ -233,6 +243,8 @@ $("#name-form").addEventListener("submit", (e) => {
   saveName(n);
   showBook();
 });
+// スタンプ帳 → 表紙へ（記録は消さない）
+$("#btn-cover").addEventListener("click", showCover);
 $("#modal-close").addEventListener("click", closeModal);
 modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 $("#btn-reset").addEventListener("click", () => {
