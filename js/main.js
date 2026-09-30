@@ -24,18 +24,29 @@ const COUNTRIES = [
       "そして、一杯のフィーカを",
     ],
   },
-  // ここから先は「これから」の枠（スウェーデンと合わせて全10枠）
-  // ※次の行き先が決まったら、下のどれかを イタリアの例のように書き換えるだけ：
-  //   { id:"it", name:"イタリア", en:"ITALY", sub:"...", status:"active", password:"...", line:"...", list:[...] }
-  { id: "q1", status: "locked" },
+  {
+    id: "it",
+    name: "イタリア",
+    en: "ITALY",
+    no: "02",                      // 便名（FLIGHT 02）
+    sub: "Ti voglio bene ― 愛おしむ想い",
+    bg: "assets/it-bg.png",        // メッセージ画面の背景（ヴェネツィアの夕景）
+    status: "active",
+    password: "baci-it02",         // ← 記事の有料エリアに書く合言葉
+    line: "味わい、愛おしむ日々へ。",
+    list: [
+      "なんでもない時間を、味わう",
+      "大切な人へ、愛を届ける",
+      "SNSのつながりも、愛おしむ",
+      "そして、自分自身を愛おしむ",
+    ],
+  },
+  // ここから先は「これから」の枠（全6枠）
+  // ※次の行き先が決まったら、下のどれかを 上の国のように書き換えるだけ
   { id: "q2", status: "locked" },
   { id: "q3", status: "locked" },
   { id: "q4", status: "locked" },
   { id: "q5", status: "locked" },
-  { id: "q6", status: "locked" },
-  { id: "q7", status: "locked" },
-  { id: "q8", status: "locked" },
-  { id: "q9", status: "locked" },
 ];
 
 // ===== 保存まわり（この端末のブラウザに記録） =====
@@ -138,6 +149,7 @@ function renderGrid() {
   const stamps = loadStamps();
   const got = COUNTRIES.filter((c) => stamps[c.id]).length;
   $("#stamp-count").textContent = got;
+  $("#stamp-total").textContent = COUNTRIES.length;
 
   grid.innerHTML = "";
   COUNTRIES.forEach((c) => {
