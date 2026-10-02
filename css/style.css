@@ -189,7 +189,6 @@ button { font-family: inherit; cursor: pointer; }
 .record-list { list-style: none; display: inline-flex; flex-direction: column; gap: 8px; text-align: left; margin-bottom: 26px; }
 .record-list li { color: var(--text-soft); font-size: 14.5px; padding-left: 20px; position: relative; }
 .record-list li::before { content: "✔"; position: absolute; left: 0; color: var(--blue); font-size: 12px; }
-
 /* トースト */
 .toast {
   position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%) translateY(20px);
